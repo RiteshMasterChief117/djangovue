@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+     "dev": "vite build --mode development --base /static/vue-dev/ --outDir ./src/static/vue-dev/ -w",
+    "build": "vite build --mode production --base /static/vue-prod/ --outDir ./src/static/vue-prod/",
     "preview": "vite preview"
   },
   "dependencies": {

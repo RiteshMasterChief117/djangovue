@@ -1,19 +1,29 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import {ref} from 'vue'
+import store from './store'
+
+import ApiGetRequest from './components/ApiGetRequest.vue';
+import CreateForm from './components/CreateForm.vue'
+const props = defineProps({
+    token: String,
+    user: String
+})
+
+if (props.token) {
+  store.setToken(props.token)
+}
+const username = props.user ? props.user: ''
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <ApiGetRequest />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
   </header>
 
   <main>
-    <TheWelcome />
+   <CreateForm />
   </main>
 </template>
 
